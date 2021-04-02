@@ -12,7 +12,15 @@ const personalMovieDB = {
     privat: false
 };
 
-for (let i = 0; i < 2; i++) {
+//1// for (let i = 0; i < 2; i++) 
+
+//2// let i = 0;
+//2// while (i <2 ) {
+//2//    i++;
+
+let i = 0;
+do { //3//
+    i++; //3//
     const a = prompt('Один из роследних просмотренных фильмов?', ''),
           b = prompt('На сколько вы его оцениваете?','');
     if (a == null || b == null || a.length > 50 || a.length < 1 || b.length > 50 || b.length < 1) {
@@ -23,13 +31,14 @@ for (let i = 0; i < 2; i++) {
     console.log('done');
     personalMovieDB.movies[a] = b;
 }
+while (i < 2); //3//
 console.log(personalMovieDB);
 
 if (personalMovieDB.count < 10)
     alert('Вы посмотрели слишком мало фильмов!')
-else if (personalMovieDB.count > 30)
+else if (personalMovieDB.count >= 30)
     alert('Да вы киноман!')
-else if (personalMovieDB.count >= 10 && personalMovieDB.count <= 30)
+else if (personalMovieDB.count >= 10 && personalMovieDB.count < 30)
     alert('Вы классический зритель!')
 else alert('Ошибка!')
 
