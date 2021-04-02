@@ -1,24 +1,38 @@
 "use strict";
 
-// const numberOfFilms = +prompt('Сколько фильмов вы уже просмотрели', '');
+// do {
+    const numberOfFilms = +prompt('Сколько фильмов вы уже просмотрели', '');
+// } while ( numberOfFilms );
 
-// const personalMovieDB = {
-//     count: numberOfFilms,
-//     movies: {},
-//     actors: {},
-//     genres: [],
-//     privat: false
-// };
+const personalMovieDB = {
+    count: numberOfFilms,
+    movies: {},
+    actors: {},
+    genres: [],
+    privat: false
+};
 
-// const a = prompt('Один из роследних просмотренных фильмов?', ''),
-//       b = +prompt('На сколько вы его оцениваете?',''),
-//       c = prompt('Один из последних просмотренных фильмов?', ''),
-//       d = +prompt('На сколько вы его оцениваете?','');
+for (let i = 0; i < 2; i++) {
+    const a = prompt('Один из роследних просмотренных фильмов?', ''),
+          b = prompt('На сколько вы его оцениваете?','');
+    if (a == null || b == null || a.length > 50 || a.length < 1 || b.length > 50 || b.length < 1) {
+        console.log('Error');
+        i--;
+        continue;
+    }
+    console.log('done');
+    personalMovieDB.movies[a] = b;
+}
+console.log(personalMovieDB);
 
-// personalMovieDB.movies[a] = b;
-// personalMovieDB.movies[c] = d;
+if (personalMovieDB.count < 10)
+    alert('Вы посмотрели слишком мало фильмов!')
+else if (personalMovieDB.count > 30)
+    alert('Да вы киноман!')
+else if (personalMovieDB.count >= 10 && personalMovieDB.count <= 30)
+    alert('Вы классический зритель!')
+else alert('Ошибка!')
 
-// console.log(personalMovieDB);
 // let a=1/0;
 // if (a) {
 //     console.log('Ok!');
@@ -44,22 +58,22 @@
 //         break;
 // };
 
-let num = 50;
+// let num = 50;
 
-while (num <= 55){
-    console.log(num++);
-}
---num;
-console.log();
-do {
-    console.log(num--);
-} while (num >=50);
-console.log();
-for (let i = 1; i < 8; i++) {    
-    if (i === 6) {
-        console.log();
-        continue;
-    };
-    //   break
-    console.log(i);
-};
+// while (num <= 55){
+//     console.log(num++);
+// }
+// --num;
+// console.log();
+// do {
+//     console.log(num--);
+// } while (num >=50);
+// console.log();
+// for (let i = 1; i < 8; i++) {    
+//     if (i === 6) {
+//         console.log();
+//         continue;
+//     };
+//     //   break
+//     console.log(i);
+// };
